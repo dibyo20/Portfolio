@@ -13,7 +13,10 @@ const skills = [
   "Git",
   "GitHub",
   "VS Code",
-  "Postman"
+  "Postman",
+  "JAVA",
+  "Bootstrap",
+  "TailwindCSS",
 ];
 
 const Skills = () => {
