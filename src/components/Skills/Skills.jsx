@@ -14,7 +14,7 @@ const skills = [
   "GitHub",
   "VS Code",
   "Postman",
-  "JAVA",
+  "Java",
   "Bootstrap",
   "TailwindCSS",
 ];
