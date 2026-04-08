@@ -7,7 +7,7 @@
   font-size: 2.5rem;
   margin-bottom: 50px;
   font-weight: 300;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
 }
 
 .skills-grid {
@@ -20,13 +20,78 @@
 }
 
 /* Individual Skill Box */
-.skill-box {
+/* .skill-box {
   border: 1px solid #222;
   padding: 10px 18px;
   border-radius: 10px;
   font-size: 0.9rem;
   cursor: default;
   transition: all 0.25s ease;
+} */
+
+/* .skill-box {
+  position: relative;
+  padding: 10px 18px;
+  font-size: 0.9rem;
+  cursor: default;
+  transition: all 0.25s ease;
+  background: rgba(255, 255, 255, 0.079);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border: 1px solid rgba(255, 255, 255, 0.051);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2);
+  overflow: hidden;
+} */
+
+.skill-box {
+  position: relative;
+  padding: 10px 18px;
+  font-size: 0.9rem;
+  cursor: default;
+  transition: all 0.25s ease;
+  background: rgba(255, 255, 255, 0.079);
+  -webkit-backdrop-filter: blur(10px);
+  backdrop-filter: blur(10px);
+  border: 1px solid rgba(255, 255, 255, 0.086);
+  border-radius: 12px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.768);
+  overflow: hidden;
+}
+
+.skill-box::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 50%;
+  background: linear-gradient(
+    to bottom,
+    rgba(255, 255, 255, 0.101),
+    rgba(255, 255, 255, 0.05),
+    transparent
+  );
+  pointer-events: none;
+  border-radius: inherit;
+}
+
+.skill-box::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: -75%;
+  width: 50%;
+  height: 100%;
+
+  background: linear-gradient(
+    120deg,
+    transparent,
+    rgba(255, 255, 255, 0.4),
+    transparent
+  );
+  transform: skewX(-20deg);
 }
 
 /* Hover Effect */
@@ -34,7 +99,14 @@
   border-color: white;
   transform: translateY(-3px);
   scale: 1.1;
+  /* animation: shine 0.8s ease; */
 }
+
+/* @keyframes shine {
+  100% {
+    left: 125%;
+  }
+} */
 
 /* Optional: subtle entrance animation */
 .skill-box {
@@ -44,16 +116,51 @@
 }
 
 /* Stagger effect */
-.skill-box:nth-child(1) { animation-delay: 0.05s; }
-.skill-box:nth-child(2) { animation-delay: 0.1s; }
-.skill-box:nth-child(3) { animation-delay: 0.15s; }
-.skill-box:nth-child(4) { animation-delay: 0.2s; }
-.skill-box:nth-child(5) { animation-delay: 0.25s; }
-.skill-box:nth-child(6) { animation-delay: 0.3s; }
-.skill-box:nth-child(7) { animation-delay: 0.35s; }
-.skill-box:nth-child(8) { animation-delay: 0.4s; }
-.skill-box:nth-child(9) { animation-delay: 0.45s; }
-.skill-box:nth-child(10) { animation-delay: 0.5s; }
+.skill-box:nth-child(1) {
+  animation-delay: 0.05s;
+}
+.skill-box:nth-child(2) {
+  animation-delay: 0.1s;
+}
+.skill-box:nth-child(3) {
+  animation-delay: 0.15s;
+}
+.skill-box:nth-child(4) {
+  animation-delay: 0.2s;
+}
+.skill-box:nth-child(5) {
+  animation-delay: 0.25s;
+}
+.skill-box:nth-child(6) {
+  animation-delay: 0.3s;
+}
+.skill-box:nth-child(7) {
+  animation-delay: 0.35s;
+}
+.skill-box:nth-child(8) {
+  animation-delay: 0.4s;
+}
+.skill-box:nth-child(9) {
+  animation-delay: 0.45s;
+}
+.skill-box:nth-child(10) {
+  animation-delay: 0.5s;
+}
+.skill-box:nth-child(11) {
+  animation-delay: 0.55s;
+}
+.skill-box:nth-child(12) {
+  animation-delay: 0.6s;
+}
+.skill-box:nth-child(13) {
+  animation-delay: 0.65s;
+}
+.skill-box:nth-child(14) {
+  animation-delay: 0.7s;
+}
+.skill-box:nth-child(15) {
+  animation-delay: 0.75s;
+}
 
 @keyframes fadeUp {
   to {
