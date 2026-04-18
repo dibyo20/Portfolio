@@ -1,20 +1,20 @@
-import React from "react";
-import Hero from "./components/Hero/Hero.jsx";
-import About from "./components/About/About.jsx";
-import Projects from "./components/Projects/Projects.jsx";
-import Skills from "./components/Skills/Skills.jsx";
-import Footer from "./components/Footer/Footer.jsx";
+import { Routes, Route } from "react-router-dom";
+import HomePage from "./pages/HomePage.jsx";
+import AboutPage from "./pages/AboutPage.jsx";
+import ProjectsPage from "./pages/ProjectsPage.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
+import Footer from "./components/Footer/Footer.jsx";
 
 const App = () => {
   return (
     <>
       <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Skills />
-      <Footer />
+      <Routes>
+        <Route path="/" element={<HomePage />} />
+        <Route path="/about" element={<AboutPage />} />
+        <Route path="/projects" element={<ProjectsPage />} />
+      </Routes>
+      <Footer/>
     </>
   );
 };

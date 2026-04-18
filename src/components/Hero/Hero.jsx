@@ -1,6 +1,7 @@
 import React from "react";
-import "./Hero.css";
+import "../../styles/Hero.css";
 import profileImg from "../../Assests/myImg.png";
+import { Link } from "react-router-dom";
 
 const Hero = () => {
   return (
@@ -13,14 +14,17 @@ const Hero = () => {
       <p>Transforming ideas into real-world web products</p>
 
       <div className="hero-actions">
-        <a href="/" className="hero-btn">
+        <Link to="/projects" className="hero-btn">
           Explore Work
-        </a>
-        <a href="/" className="hero-btn">
+        </Link>
+        <Link to="/" className="hero-btn">
           Contact Me
-        </a>
+        </Link>
         <div className="hero-icons">
-          <a href="www.linkedin.com/in/dibyo-banerjee-6a2428270" className="hero-icon">
+          <a
+            href="www.linkedin.com/in/dibyo-banerjee-6a2428270"
+            className="hero-icon"
+          >
             <i className="fab fa-linkedin-in"></i>
           </a>
 

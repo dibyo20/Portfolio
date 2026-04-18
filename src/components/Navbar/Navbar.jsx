@@ -1,6 +1,7 @@
-import "./Navbar.css";
+import "../../styles/Navbar.css";
 import { useState } from "react";
 import { Moon } from "lucide-react";
+import { Link } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
@@ -14,15 +15,15 @@ const Navbar = () => {
         <div className="divider" />
 
         <div className={`nav-center ${menuOpen ? "active" : ""}`}>
-          <a href="/" className="ver-nav on">
+          <Link to="/" className="ver-nav on">
             Home
-          </a>
-          <a href="/" className="ver-nav">
+          </Link>
+          <Link to="/about" className="ver-nav">
             About
-          </a>
-          <a href="/" className="project-nav">
+          </Link>
+          <Link to="/projects" className="project-nav">
             Projects
-          </a>
+          </Link>
 
           <button className="resume-btn">Resume</button>
         </div>

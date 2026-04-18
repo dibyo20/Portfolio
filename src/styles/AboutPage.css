@@ -1,0 +1,133 @@
+/* ===== Section ===== */
+.about-page {
+  padding: 0px 10%;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* ===== Heading ===== */
+.about-heading {
+  font-size: 2.5rem;
+  font-weight: 300;
+  font-family: "Playfair Display", serif;
+  text-align: center;
+  margin-bottom: 60px;
+}
+
+/* ===== Container ===== */
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 60px;
+}
+
+/* ===== Image ===== */
+.about-image {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.about-image img {
+  width: 300px;
+  height: 300px;
+  object-fit: cover;
+  border-radius: 20px;
+  /* filter: grayscale(100%); */
+  transition: all 0.4s ease;
+}
+
+/* Hover effect */
+.about-image img:hover {
+  filter: grayscale(0%);
+  transform: scale(1.04);
+}
+
+/* ===== Text ===== */
+.about-text {
+  flex: 1;
+  max-width: 550px;
+}
+
+.about-text p {
+  font-size: 1rem;
+  line-height: 1.8;
+  color: #444;
+  margin-bottom: 20px;
+}
+
+/* ===== Tablet (<= 1024px) ===== */
+@media (max-width: 1024px) {
+  .about-container {
+    gap: 40px;
+  }
+
+  .about-image img {
+    width: 260px;
+    height: 260px;
+  }
+
+  .about-text p {
+    font-size: 0.95rem;
+  }
+}
+
+/* ===== Mobile (<= 768px) ===== */
+@media (max-width: 768px) {
+  .about-page {
+    padding: 60px 8%;
+  }
+
+  .about-heading {
+    font-size: 2rem;
+    margin-bottom: 40px;
+  }
+
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+    gap: 30px;
+  }
+
+  .about-text {
+    order: 2;
+    max-width: 100%;
+  }
+
+  .about-image {
+    order: 1;
+  }
+
+  .about-image img {
+    width: 220px;
+    height: 220px;
+  }
+
+  .about-text p {
+    font-size: 0.95rem;
+    line-height: 1.7;
+  }
+}
+
+/* ===== Small Mobile (<= 480px) ===== */
+@media (max-width: 480px) {
+  .about-page {
+    padding: 50px 6%;
+  }
+
+  .about-heading {
+    font-size: 1.8rem;
+  }
+
+  .about-image img {
+    width: 180px;
+    height: 180px;
+  }
+
+  .about-text p {
+    font-size: 0.9rem;
+  }
+}

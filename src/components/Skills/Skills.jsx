@@ -1,5 +1,5 @@
 import React from "react";
-import "./Skills.css";
+import "../../styles/Skills.css";
 
 const skills = [
   "HTML",
@@ -17,6 +17,7 @@ const skills = [
   "Java",
   "Bootstrap",
   "TailwindCSS",
+  "SCSS"
 ];
 
 const Skills = () => {

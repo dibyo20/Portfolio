@@ -108,6 +108,7 @@
   transform: translateY(-3px);
   scale: 1.1;
   /* animation: shine 0.8s ease; */
+  box-shadow: 0 10px 30px rgba(255, 255, 255, 0.304);
 }
 
 /* @keyframes shine {
@@ -168,6 +169,9 @@
 }
 .skill-box:nth-child(15) {
   animation-delay: 0.75s;
+}
+.skill-box:nth-child(16) {
+  animation-delay: 0.8s;
 }
 
 @keyframes fadeUp {

@@ -1,5 +1,6 @@
 import React from "react";
-import "./About.css"
+import "../../styles/About.css"
+import { Link } from "react-router-dom";
 
 const About = () => {
   return (
@@ -15,7 +16,7 @@ const About = () => {
           I am passionate about learning, experimenting, and creating scalable,
           user-friendly applications.
         </p>
-        <a href="/" className="know-more">Know more</a>
+        <Link to="/about" className="know-more">Know more</Link>
       </div>
     </div>
   );
