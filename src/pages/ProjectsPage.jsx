@@ -47,7 +47,7 @@ const projects = [
   },
   {
     title: "Instagram UI",
-    desc: "Instagram Home Page.",
+    desc: "Instagram Home Page with Like Feature.",
     tech: ["HTML", "CSS", "JS"],
     image: instaImg,
     github:
