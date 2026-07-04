@@ -9,26 +9,26 @@ const Navbar = () => {
     <div className="navbar-wrapper">
       <div className="navbar">
         <div className="nav-left">
-          <h3>DB</h3>
+          <Link to="/" className="db">DB</Link>
         </div>
 
         <div className="divider" />
 
         <div className={`nav-center ${menuOpen ? "active" : ""}`}>
-          <Link to="/" className="ver-nav on">
-            Home
-          </Link>
           <Link to="/about" className="ver-nav">
             About
           </Link>
           <Link to="/projects" className="project-nav">
             Projects
           </Link>
+          <Link to="/" className="ver-nav ">
+            Contact
+          </Link>
 
           <button className="resume-btn">Resume</button>
         </div>
 
-        <div className="divider" />
+        {/* <div className="divider" /> */}
 
         <div className="nav-right">
           <button
@@ -37,9 +37,9 @@ const Navbar = () => {
           >
             ☰
           </button>
-          <span className="theme-icon">
+          {/* <span className="theme-icon">
             <Moon size={20} strokeWidth={1.5} />
-          </span>
+          </span> */}
         </div>
       </div>
     </div>

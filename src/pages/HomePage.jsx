@@ -11,12 +11,10 @@ import ProjectsPage from "../pages/ProjectsPage.jsx";
 const HomePage = () => {
   return (
     <>
-      {/* <Navbar /> */}
       <Hero />
       <About />
       <Projects />
       <Skills />
-      {/* <Footer /> */}
     </>
   );
 };

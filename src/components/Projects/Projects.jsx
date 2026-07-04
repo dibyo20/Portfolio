@@ -20,38 +20,12 @@ const Projects = () => {
       live: "#",
     },
     {
-      title: "Interactive Dashboard",
-      desc: "Basic Theme Changer, Form Validator and Local Chat UI.",
-      tech: ["React", "HTML", "CSS", "JS"],
-      image: dashboardImg,
-      github: "https://github.com/dibyo20/Frontend-Interactive-Dashboard",
-      live: "#",
-    },
-    {
-      title: "Instagram UI",
-      desc: "Instagram Home Page with Like Feature.",
-      tech: ["HTML", "CSS", "JS"],
-      image: instaImg,
-      github:
-        "https://github.com/dibyo20/JavaScript-Basic-Projects/tree/main/Insta-UI",
-      live: "#",
-    },
-    {
       title: "Weather App",
       desc: "Real Time weather app.",
       tech: ["React", "HTML", "CSS", "JS"],
       image: weatherApp,
       github: "https://github.com/dibyo20/weather-app",
       live: "https://weather-app-topaz-tau-90.vercel.app/",
-    },
-    {
-      title: "Card Generator",
-      desc: "Generate your favourite Card.",
-      tech: ["React", "HTML", "CSS", "JS"],
-      image: gencardImg,
-      github:
-        "http://github.com/dibyo20/FullStack-in-Dept/tree/main/Day15/Frontend",
-      live: "#",
     },
     {
       title: "Simon's Game",
