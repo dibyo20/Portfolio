@@ -191,8 +191,8 @@
   .nav-center {
     position: absolute;
     top: 55px;
-    right: 15px;
-    left: auto;
+    left: 50%;
+    right: auto;
     width: 140px;
     display: flex;
     flex-direction: column;
@@ -207,14 +207,14 @@
       0 10px 35px rgba(0, 0, 0, 0.6);
     border-radius: 16px;
     opacity: 0;
-    transform: translateY(-10px) scale(0.95);
+    transform: translateX(-50%) translateY(-10px) scale(0.95);
     pointer-events: none;
     transition: all 0.25s ease;
   }
 
   .nav-center.active {
     opacity: 1;
-    transform: translateY(0) scale(1);
+    transform: translateX(-50%) translateY(0) scale(1);
     pointer-events: auto;
     display: flex;
     gap: 4px;
