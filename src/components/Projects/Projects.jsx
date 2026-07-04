@@ -43,7 +43,7 @@ const Projects = () => {
 
       <div className="projects-container">
         {projectData.map((elem, index) => (
-          <ProjectCard key={index} project={elem} />
+          <ProjectCard key={index} project={elem} index={index} />
         ))}
       </div>
     </div>

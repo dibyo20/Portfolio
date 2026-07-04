@@ -1,12 +1,110 @@
 :root {
-  --bg: #0a0a0a;
-  --text: #f5f5f5;
-  --secondary-text: #949494;
-  --border: #1f1f1f;
+  --bg: #030303;
+  --text: #ffffff;
+  --secondary-text: #a1a1aa;
+  --border: rgba(255, 255, 255, 0.08);
+  --glass-bg: rgba(255, 255, 255, 0.03);
+  --glass-border: rgba(255, 255, 255, 0.08);
+  --glass-glow: rgba(0, 162, 255, 0.15);
+  --accent-glow: 0 0 20px rgba(0, 162, 255, 0.15);
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   background-color: var(--bg);
   color: var(--text);
   font-family: "Inter", sans-serif;
+  overflow-x: hidden;
+  margin: 0;
+  padding: 0;
+}
+
+/* Background Mesh Container & Glowing blobs */
+.bg-mesh-container {
+  position: fixed;
+  inset: 0;
+  z-index: -1;
+  background: #020205;
+  overflow: hidden;
+  pointer-events: none;
+}
+
+.mesh-glow {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(140px);
+  opacity: 0.12;
+  mix-blend-mode: screen;
+}
+
+.mesh-1 {
+  width: 700px;
+  height: 700px;
+  background: radial-gradient(circle, #0052d4, transparent 70%);
+  top: -200px;
+  left: -200px;
+  animation: float-mesh-1 25s infinite alternate ease-in-out;
+}
+
+.mesh-2 {
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, #7928ca, transparent 70%);
+  bottom: -150px;
+  right: -100px;
+  animation: float-mesh-2 30s infinite alternate ease-in-out;
+}
+
+.mesh-3 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, #00dfd8, transparent 70%);
+  top: 40%;
+  left: 40%;
+  animation: float-mesh-3 20s infinite alternate ease-in-out;
+}
+
+@keyframes float-mesh-1 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(120px, 80px) scale(1.15); }
+}
+
+@keyframes float-mesh-2 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(-100px, -90px) scale(0.9); }
+}
+
+@keyframes float-mesh-3 {
+  0% { transform: translate(0, 0) scale(1); }
+  100% { transform: translate(80px, -110px) scale(1.1); }
+}
+
+/* Custom Grid Overlay */
+.mesh-grid-overlay {
+  position: absolute;
+  inset: 0;
+  background-image: 
+    linear-gradient(rgba(255, 255, 255, 0.007) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 255, 255, 0.007) 1px, transparent 1px);
+  background-size: 60px 60px;
+  opacity: 0.95;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #020205;
+}
+::-webkit-scrollbar-thumb {
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 99px;
+  border: 2px solid #020205;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: rgba(255, 255, 255, 0.2);
 }

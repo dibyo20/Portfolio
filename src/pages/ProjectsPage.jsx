@@ -99,7 +99,7 @@ const ProjectsPage = () => {
 
       <div className="projects-grid">
         {projects.map((project, index) => (
-          <ProjectCard key={index} project={project} />
+          <ProjectCard key={index} project={project} index={index} />
         ))}
       </div>
     </section>

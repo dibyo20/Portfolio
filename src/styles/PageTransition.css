@@ -1,0 +1,122 @@
+.page-transition-container {
+  position: relative;
+  width: 100%;
+  min-height: 100vh;
+}
+
+/* Page content animation on mount */
+.page-content-wrapper {
+  animation: pageContentReveal 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+  will-change: transform, opacity, filter;
+}
+
+@keyframes pageContentReveal {
+  0% {
+    opacity: 0;
+    transform: scale(0.975) translateY(15px);
+    filter: blur(10px);
+  }
+  30% {
+    opacity: 0.1;
+    filter: blur(8px);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    filter: blur(0);
+  }
+}
+
+/* Liquid Glass Overlay Flow Sweep */
+.liquid-glass-overlay {
+  position: fixed;
+  inset: 0;
+  z-index: 900; /* Run behind navbar z-index 1000, keeping navbar unblurred */
+  pointer-events: none;
+  
+  /* Animate blur sweep */
+  opacity: 0;
+  backdrop-filter: blur(0px);
+  -webkit-backdrop-filter: blur(0px);
+  animation: overlaySweep 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+@keyframes overlaySweep {
+  0% {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
+  30% {
+    opacity: 1;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+  }
+  70% {
+    opacity: 1;
+    backdrop-filter: blur(25px);
+    -webkit-backdrop-filter: blur(25px);
+  }
+  100% {
+    opacity: 0;
+    backdrop-filter: blur(0px);
+    -webkit-backdrop-filter: blur(0px);
+  }
+}
+
+/* Glowing Liquid Blobs */
+.liquid-glow {
+  position: absolute;
+  border-radius: 50%;
+  mix-blend-mode: screen;
+  filter: blur(80px);
+  opacity: 0;
+  transform: scale(0.2);
+  animation: blobSwell 0.8s cubic-bezier(0.25, 1, 0.5, 1) forwards;
+}
+
+.glow-1 {
+  width: 40vw;
+  height: 40vw;
+  background: radial-gradient(circle, rgba(0, 150, 255, 0.35) 0%, transparent 70%);
+  top: 10%;
+  left: 10%;
+  animation-delay: 0s;
+}
+
+.glow-2 {
+  width: 45vw;
+  height: 45vw;
+  background: radial-gradient(circle, rgba(160, 32, 240, 0.3) 0%, transparent 70%);
+  bottom: 10%;
+  right: 10%;
+  animation-delay: 0.05s;
+}
+
+.glow-3 {
+  width: 30vw;
+  height: 30vw;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.15) 0%, transparent 70%);
+  top: 35%;
+  left: 45%;
+  animation-delay: 0.1s;
+}
+
+@keyframes blobSwell {
+  0% {
+    opacity: 0;
+    transform: scale(0.2) translate(0, 0);
+  }
+  35% {
+    opacity: 1;
+    transform: scale(1.5) translate(5vw, 5vh);
+  }
+  65% {
+    opacity: 1;
+    transform: scale(1.4) translate(-3vw, -2vh);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(0.5) translate(-10vw, 10vh);
+  }
+}
