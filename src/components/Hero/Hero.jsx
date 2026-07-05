@@ -73,7 +73,7 @@ const Hero = () => {
         </a>
         <div className="hero-icons">
           <a
-            href="https://linkedin.com/in/dibyo-banerjee-6a2428270"
+            href="https://linkedin.com/in/dibyo-banerjee"
             className="hero-icon"
             target="_blank"
             rel="noopener noreferrer"

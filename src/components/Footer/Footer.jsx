@@ -30,9 +30,9 @@ const Footer = () => {
       <div className="footer-line"></div>
 
       <div className="footer-links">
-        <a href="https://linkedin.com/in/dibyo-banerjee-6a2428270" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+        <a href="https://linkedin.com/in/dibyo-banerjee" target="_blank" rel="noopener noreferrer">LinkedIn</a>
         <a href="https://github.com/dibyo20" target="_blank" rel="noopener noreferrer">GitHub</a>
-        <a href="/" target="_blank" rel="noopener noreferrer">Instagram</a>
+        <a href="https://leetcode.com/u/dibyo20/" target="_blank" rel="noopener noreferrer">LeetCode</a>
       </div>
     </footer>
   );
