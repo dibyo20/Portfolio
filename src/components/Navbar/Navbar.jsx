@@ -157,7 +157,7 @@ const Navbar = () => {
           </a>
 
           <a
-            href="https://drive.google.com/file/d/1tzezD6WJOPRGsDhO-btryeXJIxjTzicb/view?usp=sharing"
+            href="https://drive.google.com/file/d/1aqEVkf8Y0tCX4ISiLoL0YFmXFlNW_OoL/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="resume-btn"
