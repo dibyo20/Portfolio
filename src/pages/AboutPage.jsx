@@ -117,7 +117,7 @@ const AboutPage = () => {
           </p>
 
           <p>
-            My goal is to combine strong full-stack development with System Design and Generative AI to grow into an <strong className="highlight">AI Engineer</strong>. I aspire to build intelligent, scalable software that leverages modern AI technologies to solve meaningful real-world problems and create impactful digital experiences.
+            My goal is to combine strong full-stack development with <strong className="highlight">System Design</strong> and <strong className="highlight">Generative AI</strong> to grow into an <strong className="highlight">AI Engineer</strong>. I aspire to build intelligent, scalable software that leverages modern AI technologies to solve meaningful real-world problems and create impactful digital experiences.
           </p>
         </div>
       </div>
