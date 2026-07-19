@@ -43,6 +43,11 @@
     /* scale: 1.1; */
 }
 
+.about-content .highlight {
+  color: #ffffff;
+  font-weight: 600;
+}
+
 .know-more {
   display: inline-block;
   margin-top: 15px;

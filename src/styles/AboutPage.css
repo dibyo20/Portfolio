@@ -1,16 +1,15 @@
 /* ===== Section ===== */
 .about-page {
-  padding: 0px 10%;
+  padding: 80px 10%;
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  justify-content: center;
-  background-color: #030303;
+  background-color: transparent;
 }
 
 /* ===== Heading ===== */
 .about-heading {
-  font-size: 2.5rem;
+  font-size: 3rem;
   font-weight: 300;
   font-family: "Playfair Display", serif;
   text-align: center;
@@ -23,67 +22,331 @@
   align-items: center;
   justify-content: space-between;
   gap: 60px;
+  margin-bottom: 40px;
 }
 
 /* ===== Image ===== */
-.about-image {
+.about-image-wrapper {
   flex: 1;
   display: flex;
   justify-content: center;
 }
 
-.about-image img {
-  width: 300px;
-  height: 300px;
-  object-fit: cover;
-  border-radius: 20px;
-  /* filter: grayscale(100%); */
-  transition: all 0.4s ease;
+.profile-image-container {
+  position: relative;
+  width: 330px;
+  height: 380px;
+  border-radius: 28px;
+  background-color: #fccc2c; /* Warm yellow frame background */
+  overflow: hidden;
+  border: 1px solid rgba(255, 255, 255, 0.15);
+  box-shadow: 
+    inset 0 1px 1px rgba(255, 255, 255, 0.3),
+    0 15px 35px rgba(0, 0, 0, 0.4);
+  transition: 
+    transform 0.6s cubic-bezier(0.25, 1, 0.5, 1),
+    box-shadow 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  cursor: pointer;
 }
 
-/* Hover effect */
-.about-image img:hover {
-  filter: grayscale(0%);
-  transform: scale(1.04);
+.profile-image-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 28px;
+  transition: transform 0.6s cubic-bezier(0.25, 1, 0.5, 1);
+  pointer-events: none;
+}
+
+/* Hover effect: zoom up a little */
+.profile-image-container:hover {
+  transform: scale(1.03) translateY(-4px);
+  box-shadow: 
+    inset 0 1px 1px rgba(255, 255, 255, 0.4),
+    0 25px 45px rgba(0, 0, 0, 0.55),
+    0 0 35px rgba(252, 204, 44, 0.25);
+}
+
+.profile-image-container:hover img {
+  transform: scale(1.06);
 }
 
 /* ===== Text ===== */
 .about-text {
-  flex: 1;
-  max-width: 550px;
+  flex: 1.2;
+  max-width: 650px;
 }
 
 .about-text p {
-  font-size: 1.05rem;
+  font-size: 1rem;
   line-height: 1.8;
   color: rgba(255, 255, 255, 0.75);
+  margin-bottom: 24px;
+}
+
+/* ===== Sections layout ===== */
+.about-section {
+  padding: 80px 0 20px 0;
+  width: 100%;
+}
+
+.focus-section {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  margin-top: 20px;
+}
+
+/* ===== Section Titles ===== */
+.about-section-title {
+  font-family: "Playfair Display", serif;
+  font-size: 2.2rem;
+  font-weight: 300;
+  color: #ffffff;
+  margin-bottom: 40px;
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  text-align: left;
+}
+
+/* The vertical bar on headings */
+.title-bar {
+  display: inline-block;
+  width: 4px;
+  height: 28px;
+  background-color: #ffffff; /* Cohesive yellow matching the profile image frame */
+  border-radius: 2px;
+  flex-shrink: 0;
+}
+
+/* Highlighted text inside introduction */
+.about-text strong.highlight {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+/* ===== Grid Layouts ===== */
+.about-grid {
+  display: grid;
+  gap: 24px;
+  width: 100%;
+}
+
+.current-focus-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.achievements-grid {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.tech-stack-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ===== Reusable Glassmorphic Tilt Card ===== */
+.about-card {
+  position: relative;
+  border-radius: 16px;
+  overflow: hidden;
+  padding: 32px 24px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.03) 0%,
+    rgba(255, 255, 255, 0.01) 100%
+  );
+  -webkit-backdrop-filter: blur(16px);
+  backdrop-filter: blur(16px);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow:
+    inset 0 1px 0.5px rgba(255, 255, 255, 0.12),
+    0 12px 30px rgba(0, 0, 0, 0.4);
+  transition: 
+    transform 0.4s cubic-bezier(0.25, 1, 0.5, 1),
+    border-color 0.3s ease,
+    box-shadow 0.3s ease,
+    background 0.3s ease;
+  cursor: pointer;
+  height: 100%;
+  box-sizing: border-box;
+}
+
+.about-card:hover {
+  border-color: rgba(255, 255, 255, 0.25);
+  background: linear-gradient(
+    135deg,
+    rgba(255, 255, 255, 0.06) 0%,
+    rgba(255, 255, 255, 0.02) 100%
+  );
+  box-shadow:
+    inset 0 1px 1px rgba(255, 255, 255, 0.25),
+    0 15px 40px rgba(0, 0, 0, 0.55),
+    0 0 20px rgba(252, 204, 44, 0.15); /* yellow glow matching profile frame theme */
+}
+
+/* Glare overlay */
+.about-card .card-glare {
+  position: absolute;
+  inset: 0;
+  z-index: 2;
+  pointer-events: none;
+  background: radial-gradient(
+    250px circle at var(--mouse-x, 0px) var(--mouse-y, 0px),
+    rgba(255, 255, 255, 0.08),
+    transparent 55%
+  );
+  opacity: 0;
+  transition: opacity 0.4s ease;
+  border-radius: inherit;
+}
+
+.about-card:hover .card-glare {
+  opacity: 1;
+}
+
+.card-inner-content {
+  position: relative;
+  z-index: 3;
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+/* ===== Current Focus Card Specific ===== */
+.focus-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+}
+
+.focus-icon-container {
+  width: 42px;
+  height: 42px;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 8px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 24px;
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.85);
+}
+
+.focus-card h3 {
+  font-family: "Outfit", "Inter", sans-serif;
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #ffffff;
+  margin: 0 0 12px 0;
+}
+
+.focus-card p {
+  font-size: 0.92rem;
+  line-height: 1.6;
+  color: var(--secondary-text);
+  margin: 0;
+}
+
+/* ===== Achievements Card Specific ===== */
+.achievement-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.achievement-number {
+  font-family: "Playfair Display", serif;
+  font-size: 3.2rem;
+  font-weight: 400;
+  color: #ffffff;
+  line-height: 1.1;
+  margin-bottom: 12px;
+}
+
+.achievement-label {
+  font-family: "Inter", sans-serif;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--secondary-text);
+  letter-spacing: 0.1em;
+}
+
+/* ===== Tech Stack Card Specific ===== */
+.tech-card {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  text-align: left;
+  padding: 28px 20px;
+}
+
+.tech-category-title {
+  font-family: "Inter", sans-serif;
+  font-size: 0.8rem;
+  font-weight: 700;
+  color: var(--secondary-text);
+  letter-spacing: 0.1em;
   margin-bottom: 20px;
+}
+
+.tech-badges-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
 }
 
 /* ===== Tablet (<= 1024px) ===== */
 @media (max-width: 1024px) {
+  .about-page {
+    padding: 60px 8%;
+  }
+
   .about-container {
     gap: 40px;
   }
 
-  .about-image img {
-    width: 260px;
-    height: 260px;
+  .profile-image-container {
+    width: 290px;
+    height: 330px;
+    border-radius: 24px;
   }
 
   .about-text p {
     font-size: 0.95rem;
+  }
+
+  .about-section {
+    padding: 60px 0 20px 0;
+  }
+
+  .current-focus-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .achievements-grid {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .tech-stack-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
   }
 }
 
 /* ===== Mobile (<= 768px) ===== */
 @media (max-width: 768px) {
   .about-page {
-    padding: 60px 8%;
+    padding: 60px 6%;
   }
 
   .about-heading {
-    font-size: 2rem;
+    font-size: 2.2rem;
     margin-bottom: 40px;
   }
 
@@ -98,37 +361,79 @@
     max-width: 100%;
   }
 
-  .about-image {
+  .about-image-wrapper {
     order: 1;
   }
 
-  .about-image img {
-    width: 220px;
-    height: 220px;
+  .profile-image-container {
+    width: 260px;
+    height: 300px;
+    border-radius: 20px;
   }
 
   .about-text p {
     font-size: 0.95rem;
     line-height: 1.7;
   }
+
+  .about-section {
+    padding: 50px 0 10px 0;
+  }
+
+  .about-section-title {
+    font-size: 1.8rem;
+    margin-bottom: 30px;
+  }
+
+  .current-focus-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .achievements-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .tech-stack-grid {
+    grid-template-columns: 1fr;
+    gap: 20px;
+  }
+
+  .achievement-number {
+    font-size: 2.8rem;
+  }
+
+  .about-card {
+    padding: 28px 20px;
+  }
 }
 
 /* ===== Small Mobile (<= 480px) ===== */
 @media (max-width: 480px) {
   .about-page {
-    padding: 50px 6%;
+    padding: 50px 5%;
   }
 
   .about-heading {
     font-size: 1.8rem;
   }
 
-  .about-image img {
-    width: 180px;
-    height: 180px;
+  .profile-image-container {
+    width: 210px;
+    height: 240px;
+    border-radius: 16px;
   }
 
   .about-text p {
     font-size: 0.9rem;
+  }
+
+  .about-section-title {
+    font-size: 1.6rem;
+  }
+
+  .achievement-number {
+    font-size: 2.5rem;
   }
 }

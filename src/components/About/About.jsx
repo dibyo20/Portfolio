@@ -8,13 +8,7 @@ const About = () => {
       <h2>About Me</h2>
       <div className="about-content">
         <p>
-          I am a Full Stack Developer currently pursuing my B.Tech in Computer
-          Science. I enjoy building modern web applications and solving
-          real-world problems through code.
-          I have been working with the MERN stack and continuously improving my
-          skills by building projects and exploring technologies like AI.
-          I am passionate about learning, experimenting, and creating scalable,
-          user-friendly applications.
+          I'm a <strong className="highlight">Full-Stack MERN Developer</strong> and <strong className="highlight">B.Tech Computer Science</strong> student who enjoys building scalable, secure, and user-centric web applications. Passionate about solving real-world problems through technology, I continuously strengthen my expertise in <strong className="highlight">Data Structures & Algorithms</strong>, <strong className="highlight">System Design</strong>, and <strong className="highlight">Generative AI</strong> while building production-ready software.
         </p>
         <Link to="/about" className="know-more">Know more</Link>
       </div>
