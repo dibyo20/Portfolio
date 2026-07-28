@@ -170,12 +170,12 @@ const AboutPage = () => {
         </h2>
         <div className="about-grid achievements-grid">
           <GlassCard className="achievement-card">
-            <div className="achievement-number">250+</div>
+            <div className="achievement-number">300+</div>
             <div className="achievement-label">DSA PROBLEMS</div>
           </GlassCard>
 
           <GlassCard className="achievement-card">
-            <div className="achievement-number">120+</div>
+            <div className="achievement-number">140+</div>
             <div className="achievement-label">LEETCODE STREAK</div>
           </GlassCard>
 
@@ -221,6 +221,7 @@ const AboutPage = () => {
               <span className="tech-badge">MVC Architecture</span>
               <span className="tech-badge">CRUD Operations</span>
               <span className="tech-badge">Schema Design</span>
+              <span className="tech-badge">Redis</span>
               <span className="tech-badge">Database Optimization</span>
             </div>
           </GlassCard>

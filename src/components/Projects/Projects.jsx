@@ -1,40 +1,27 @@
 import React from "react";
 import "../../styles/Projects.css";
 import ProjectCard from "./ProjectCard";
-import weatherApp from "../../Assests/weatherApp.png";
-import instaImg from "../../Assests/instaUI.png";
-import simonImg from "../../Assests/simonImg.png";
-import dashboardImg from "../../Assests/dashboard.png";
-import MoviesearchImg from "../../Assests/MovieSearch.png";
-import gencardImg from "../../Assests/gencard.png";
+import clicksyImg from "../../Assests/clicksy.png";
+import solvitImg from "../../Assests/solvit.png";
+import { Link } from "react-router-dom";
 
 const Projects = () => {
   const projectData = [
     {
-      title: "CineLens",
-      desc: "Movies Search App with Year and Type Filter.",
-      tech: ["React", "HTML", "CSS", "JS"],
-      image: MoviesearchImg,
-      github:
-        "https://github.com/dibyo20/FullStack-in-Dept/tree/main/Project-2",
-      live: "#",
+      title: "Clicksy",
+      desc: "A modern social media platform built using the MERN Stack. It offers a seamless experience for creators to connect, share, and build high-octane digital communities.",
+      tech: ["React", "Node.js", "MongoDB", "ImageKit"],
+      image: clicksyImg,
+      github: "https://github.com/dibyo20/Clicksy.git",
+      live: "https://clicksy.dibyo.tech/",
     },
     {
-      title: "Weather App",
-      desc: "Real Time weather app.",
-      tech: ["React", "HTML", "CSS", "JS"],
-      image: weatherApp,
-      github: "https://github.com/dibyo20/weather-app",
-      live: "https://weather-app-topaz-tau-90.vercel.app/",
-    },
-    {
-      title: "Simon's Game",
-      desc: "Memory pattern game",
-      tech: ["HTML", "CSS", "JS"],
-      image: simonImg,
-      github:
-        "https://github.com/dibyo20/JavaScript-Basic-Projects/tree/main/Simon's%20Game",
-      live: "#",
+      title: "Solvit",
+      desc: "Solvit is an AI-powered problem-solving platform designed for mental clarity and productivity. It connects users with intuitive tools and empathetic AI responses.",
+      tech: ["React", "Express", "OpenAI API", "Tailwind"],
+      image: solvitImg,
+      github: "https://github.com/dibyo20/Solvit-Counselling.git",
+      live: "https://solvit.dibyo.tech/",
     },
   ];
   return (
@@ -45,6 +32,16 @@ const Projects = () => {
         {projectData.map((elem, index) => (
           <ProjectCard key={index} project={elem} index={index} />
         ))}
+      </div>
+
+      <div className="projects-more-btn-container">
+        <Link to="/projects" className="projects-more-btn">
+          Check more of my projects
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" style={{ marginLeft: "8px", verticalAlign: "middle" }}>
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </Link>
       </div>
     </div>
   );
