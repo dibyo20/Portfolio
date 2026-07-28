@@ -20,7 +20,7 @@ const ProjectCard = ({ project }) => {
     const dy = (y - yc) / yc;
 
     // Set 3D tilt style
-    const maxTilt = 8; // degrees max tilt
+    const maxTilt = 4; // degrees max tilt
     const rotateX = -dy * maxTilt;
     const rotateY = dx * maxTilt;
 
@@ -57,7 +57,7 @@ const ProjectCard = ({ project }) => {
     const dx = (x - xc) / xc;
     const dy = (y - yc) / yc;
 
-    const maxTilt = 8;
+    const maxTilt = 4;
     const rotateX = -dy * maxTilt;
     const rotateY = dx * maxTilt;
 

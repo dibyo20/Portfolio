@@ -22,7 +22,7 @@ const secondaryProjects = [
   {
     title: "Expense Tracker",
     desc: "A budget management dashboard with Total Income, Expense, and Balance tracking. Includes search, category filtering, and real-time transaction logging.",
-    tech: ["React", "CSS", "Vite"],
+    tech: ["React", "HTML", "CSS", "JS"],
     image: expenseTrackerImg,
     github: "https://github.com/dibyo20/expense-tracker.git",
     live: "https://expensetrackerdibyo.vercel.app/",
@@ -66,7 +66,7 @@ const ProjectsPage = () => {
     <section className="projects-page">
       <h2 className="projects-heading">My Projects</h2>
       <p className="projects-subheading">
-        A collection of projects showcasing my journey in Full Stack Development, MERN Stack and modern web technologies. Every project represents solving real-world problems while continuously improving my engineering skills.
+        A collection of projects showcasing my journey in <strong className="highlight">Full Stack Development</strong>, <strong className="highlight">MERN Stack</strong> and <strong className="highlight">modern web</strong> technologies. Every project represents solving <strong className="highlight">real-world problems</strong> while continuously improving my engineering skills.
       </p>
 
       {/* Featured Major Projects */}
@@ -208,7 +208,7 @@ const ProjectsPage = () => {
       <div className="more-projects-section">
         <h3 className="more-projects-heading">More of My Projects</h3>
         <p className="more-projects-subheading">
-          Additional projects built while exploring frontend development, APIs, JavaScript, UI design, and modern web technologies.
+          Additional projects built while exploring <strong className="highlight">frontend development</strong>, <strong className="highlight">APIs</strong>, <strong className="highlight">JavaScript</strong>, <strong className="highlight">UI design</strong>, and <strong className="highlight">modern web</strong> technologies.
         </p>
 
         <div className="projects-grid">

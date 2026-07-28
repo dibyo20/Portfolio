@@ -21,6 +21,16 @@
   text-align: center;
 }
 
+.projects-subheading .highlight {
+  color: #ffffff;
+  font-weight: 600;
+}
+
+.more-projects-subheading .highlight {
+  color: #ffffff;
+  font-weight: 600;
+}
+
 /* FEATURED MAJOR PROJECTS */
 .major-projects-container {
   display: flex;
