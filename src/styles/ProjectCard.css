@@ -202,3 +202,10 @@
     0 0 10px rgba(255, 255, 255, 0.1);
   transform: translateY(-2px);
 }
+
+@media (max-width: 1024px) {
+  .project-card {
+    height: auto;
+    min-height: 500px;
+  }
+}
