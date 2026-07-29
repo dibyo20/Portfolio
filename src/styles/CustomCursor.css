@@ -1,0 +1,42 @@
+/* Global cursor hiding for desktop */
+@media (pointer: fine) {
+  *, *::before, *::after {
+    cursor: none !important;
+  }
+}
+
+.custom-cursor-container {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 20px;
+  height: 20px;
+  pointer-events: none;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: opacity 0.3s ease;
+  transform: translate3d(-100px, -100px, 0);
+  will-change: transform;
+}
+
+.custom-cursor-dot {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  box-sizing: border-box;
+  
+  /* Glassmorphism styling */
+  border: 1.5px solid rgba(255, 255, 255, 0.65);
+  background: rgba(255, 255, 255, 0.07);
+  -webkit-backdrop-filter: blur(6px);
+  backdrop-filter: blur(6px);
+}
+
+/* Ensure no custom cursor is active on touch screens */
+@media (pointer: coarse) {
+  .custom-cursor-container {
+    display: none !important;
+  }
+}

@@ -5,6 +5,7 @@ import ProjectsPage from "./pages/ProjectsPage.jsx";
 import Navbar from "./components/Navbar/Navbar.jsx";
 import Footer from "./components/Footer/Footer.jsx";
 import PageTransition from "./components/PageTransition.jsx";
+import CustomCursor from "./components/CustomCursor/CustomCursor.jsx";
 
 const App = () => {
   return (
@@ -17,6 +18,7 @@ const App = () => {
         <div className="mesh-grid-overlay"></div>
       </div>
 
+      <CustomCursor />
       <Navbar />
       <PageTransition>
         <Routes>
