@@ -16,8 +16,8 @@ const secondaryProjects = [
     desc: "A sleek movie exploration application allowing users to search and discover films. Features advanced filtering options by year and type utilizing live API queries.",
     tech: ["React", "HTML", "CSS", "JS"],
     image: MoviesearchImg,
-    github: "https://github.com/dibyo20/FullStack-in-Dept/tree/main/Project-2",
-    live: "#",
+    github: "https://github.com/dibyo20/CineLens.git",
+    live: "https://cinelens-dibyo.vercel.app/",
   },
   {
     title: "Expense Tracker",
@@ -33,7 +33,7 @@ const secondaryProjects = [
     tech: ["React", "HTML", "CSS", "JS"],
     image: weatherApp,
     github: "https://github.com/dibyo20/weather-app",
-    live: "https://weather-app-topaz-tau-90.vercel.app/",
+    live: "https://weatherapp-dibyo.vercel.app/",
   },
   {
     title: "Card Generator",
@@ -144,10 +144,10 @@ const ProjectsPage = () => {
             <img src={solvitImg} alt="Solvit" />
           </div>
           <div className="major-project-content">
-            <h3 className="major-project-title">Solvit</h3>
-            <span className="major-project-tag">AI-Powered Productivity</span>
+            <h3 className="major-project-title">Solvit Counselling</h3>
+            <span className="major-project-tag">Full Stack Counselling Platform</span>
             <p className="major-project-desc">
-              Solvit is an AI-powered problem-solving platform designed for mental clarity and productivity. It connects users with intuitive tools and empathetic AI responses to navigate complex workflows and personal growth.
+              Solvit Counselling is a full-stack web application designed for discovering professional counsellors, authenticating users, and browsing specialists by their area of expertise. It offers a secure and user-friendly experience for matching with the right support.
             </p>
             <h4 className="major-project-features-title">Key Features</h4>
             <div className="major-project-features">
@@ -156,21 +156,21 @@ const ProjectsPage = () => {
                   <circle cx="12" cy="12" r="10" />
                   <polyline points="8 12 11 15 16 9" />
                 </svg>
-                <span>AI Integration</span>
+                <span>JWT Authentication</span>
               </div>
               <div className="major-project-feature-item">
                 <svg className="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="12" cy="12" r="10" />
                   <polyline points="8 12 11 15 16 9" />
                 </svg>
-                <span>Personal Dashboard</span>
+                <span>Counsellor Search & Filtering</span>
               </div>
               <div className="major-project-feature-item">
                 <svg className="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <circle cx="12" cy="12" r="10" />
                   <polyline points="8 12 11 15 16 9" />
                 </svg>
-                <span>Real-time Data</span>
+                <span>Appointment Booking UI</span>
               </div>
               <div className="major-project-feature-item">
                 <svg className="feature-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
