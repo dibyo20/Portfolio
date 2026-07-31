@@ -13,14 +13,12 @@ const ProjectCard = ({ project }) => {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    // Calculate relative coordinates (-1 to 1)
     const xc = rect.width / 2;
     const yc = rect.height / 2;
     const dx = (x - xc) / xc;
     const dy = (y - yc) / yc;
 
-    // Set 3D tilt style
-    const maxTilt = 4; // degrees max tilt
+    const maxTilt = 4;
     const rotateX = -dy * maxTilt;
     const rotateY = dx * maxTilt;
 
@@ -28,7 +26,7 @@ const ProjectCard = ({ project }) => {
       transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`,
     });
 
-    // Set light reflection flare style using custom properties
+    // Set glare reflection coordinates
     setGlareStyle({
       "--mouse-x": `${x}px`,
       "--mouse-y": `${y}px`,
@@ -91,7 +89,6 @@ const ProjectCard = ({ project }) => {
         onTouchMove={handleTouchMove}
         onTouchEnd={handleTouchEnd}
       >
-        {/* Visual Glare Highlight */}
         <div className="card-glare"></div>
 
         <div className="project-image">

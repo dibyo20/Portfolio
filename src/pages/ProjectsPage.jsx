@@ -69,9 +69,7 @@ const ProjectsPage = () => {
         A collection of projects showcasing my journey in <strong className="highlight">Full Stack Development</strong>, <strong className="highlight">MERN Stack</strong> and <strong className="highlight">modern web</strong> technologies. Every project represents solving <strong className="highlight">real-world problems</strong> while continuously improving my engineering skills.
       </p>
 
-      {/* Featured Major Projects */}
       <div className="major-projects-container">
-        {/* Clicksy Major Project */}
         <div className="major-project">
           <div className="major-project-image-wrapper" onClick={() => window.open("https://clicksy.dibyo.tech/", "_blank")}>
             <img src={clicksyImg} alt="Clicksy" />
@@ -138,7 +136,6 @@ const ProjectsPage = () => {
 
         <div className="section-divider"></div>
 
-        {/* Solvit Major Project */}
         <div className="major-project reverse">
           <div className="major-project-image-wrapper" onClick={() => window.open("https://solvit.dibyo.tech/", "_blank")}>
             <img src={solvitImg} alt="Solvit" />
@@ -204,7 +201,6 @@ const ProjectsPage = () => {
         </div>
       </div>
 
-      {/* More of My Projects */}
       <div className="more-projects-section">
         <h3 className="more-projects-heading">More of My Projects</h3>
         <p className="more-projects-subheading">

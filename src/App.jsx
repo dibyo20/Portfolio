@@ -10,7 +10,6 @@ import CustomCursor from "./components/CustomCursor/CustomCursor.jsx";
 const App = () => {
   return (
     <>
-      {/* Fixed animated mesh gradient background */}
       <div className="bg-mesh-container">
         <div className="mesh-glow mesh-1"></div>
         <div className="mesh-glow mesh-2"></div>

@@ -6,7 +6,7 @@ const PageTransition = ({ children }) => {
   const location = useLocation();
   const [isTransitioning, setIsTransitioning] = useState(false);
 
-  // Scroll to top instantly and trigger transition overlay on pathname change
+  // Reset scroll and trigger transition on route change
   useEffect(() => {
     window.scrollTo({ top: 0, behavior: "instant" });
     if (document.documentElement) {
@@ -18,18 +18,17 @@ const PageTransition = ({ children }) => {
       document.body.scrollTo({ top: 0, behavior: "instant" });
     }
 
-    // Mount the transition sweep overlay
     setIsTransitioning(true);
     const timer = setTimeout(() => {
       setIsTransitioning(false);
-    }, 800); // Matches CSS sweep animation duration
+    }, 800);
 
     return () => clearTimeout(timer);
   }, [location.pathname]);
 
   return (
     <div key={location.pathname} className="page-transition-container">
-      {/* Liquid Glass Overlay Flow ONLY rendered during active transition */}
+      {/* Transition overlay */}
       {isTransitioning && (
         <div className="liquid-glass-overlay">
           <div className="liquid-glow glow-1"></div>
@@ -38,7 +37,6 @@ const PageTransition = ({ children }) => {
         </div>
       )}
       
-      {/* Content wrapper */}
       <div className="page-content-wrapper">
         {children}
       </div>

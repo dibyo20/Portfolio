@@ -36,7 +36,7 @@ const SkillBox = ({ skill, index }) => {
     const dx = (x - xc) / xc;
     const dy = (y - yc) / yc;
 
-    const maxTilt = 15; // skills are smaller, they can tilt a bit more!
+    const maxTilt = 15;
     const rotateX = -dy * maxTilt;
     const rotateY = dx * maxTilt;
 

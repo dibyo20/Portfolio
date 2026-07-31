@@ -6,10 +6,10 @@
   justify-content: center;
   text-align: center;
   padding: 0 20px;
-  /* padding-top: calc(2px + 2px); */
+  
 }
 
-/* Profile Image */
+
 .hero-profile-img {
   width: 200px;
   height: 200px;
@@ -39,7 +39,7 @@
   50% { transform: translateY(-8px); }
 }
 
-/* Main Name & Typing */
+
 .hero-content h1 {
   font-size: clamp(2.3rem, 5.5vw, 4.6rem);
   font-weight: 300;
@@ -80,7 +80,7 @@
   50% { opacity: 0; }
 }
 
-/* Tagline */
+
 .hero-description {
   font-size: clamp(1.1rem, 2vw, 1.25rem);
   color: var(--secondary-text);
@@ -97,7 +97,7 @@
   transform: translateY(0);
 }
 
-/* Actions Container */
+
 .hero-actions-container {
   display: flex;
   justify-content: center;
@@ -115,16 +115,7 @@
   transform: translateY(0);
 }
 
-/* .hero-btn {
-  text-decoration: none;
-  color: #aaa;
-  font-size: 0.95rem;
-  padding: 10px 20px;
-  border-radius: 10px;
-  border: 1px solid #333;
-  background: transparent;
-  transition: all 0.3s ease;
-} */
+
 
 .hero-btn {
   text-decoration: none;
@@ -179,13 +170,7 @@
   transform: skewX(-20deg);
 }
 
-/* .hero-btn:hover {
-  background: #fff;
-  color: #000;
-  border-color: #fff;
-  scale: 1.02;
-  transform: translateY(-2px);
-} */
+
 
 .hero-btn:hover {
   border: 1px solid rgba(255, 255, 255, 0.488);
@@ -199,20 +184,7 @@
   margin-left: 3px;
 }
 
-/* .hero-icon {
-  width: 45px;
-  height: 2.4rem;
-  border-radius: 23%;
-  border: 1px solid #333;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  text-decoration: none;
-  color: #aaa;
-  font-size: 0.95rem;
-  background: transparent;
-  transition: all 0.3s ease;
-} */
+
 
 .hero-icon {
   color: #fff;
@@ -268,13 +240,7 @@
   transform: skewX(-20deg);
 }
 
-/* .hero-icon:hover {
-  background: #fff;
-  color: #000;
-  border-color: #fff;
-  scale: 1.02;
-  transform: translateY(-2px);
-} */
+
 
 .hero-icon:hover {
   border: 1px solid rgba(255, 255, 255, 0.488);

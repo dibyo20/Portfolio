@@ -7,13 +7,13 @@ const Navbar = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  // Refs to calculate sizes and positions
+  // Navigation references
   const navRef = useRef(null);
   const aboutRef = useRef(null);
   const projectsRef = useRef(null);
   const contactRef = useRef(null);
 
-  // Highlight bubble state
+  // Sliding bubble indicator state
   const [bubbleStyle, setBubbleStyle] = useState({ left: 0, width: 0, opacity: 0 });
   const [hoveredEl, setHoveredEl] = useState(null);
 
@@ -28,14 +28,13 @@ const Navbar = () => {
     e.preventDefault();
     setMenuOpen(false);
     
-    // Find footer element and scroll smoothly to it
     const footer = document.querySelector(".footer");
     if (footer) {
       footer.scrollIntoView({ behavior: "smooth" });
     }
   };
 
-  // Helper to adjust bubble size and position with a comfortable padding buffer
+  // Update sliding bubble dimensions and position
   const updateBubblePosition = (targetEl) => {
     if (!targetEl || !navRef.current) {
       setBubbleStyle((prev) => ({ ...prev, opacity: 0 }));
@@ -44,7 +43,6 @@ const Navbar = () => {
     const navRect = navRef.current.getBoundingClientRect();
     const targetRect = targetEl.getBoundingClientRect();
 
-    // 4px horizontal padding, 2px vertical padding on each side
     const left = targetRect.left - navRect.left - 4;
     const top = targetRect.top - navRect.top - 2;
     const width = targetRect.width + 8;
@@ -59,7 +57,6 @@ const Navbar = () => {
     });
   };
 
-  // Run update whenever route pathname, mouse hover, or mobile menu toggle changes
   useEffect(() => {
     const runUpdate = () => {
       if (hoveredEl) {
@@ -67,7 +64,6 @@ const Navbar = () => {
         return;
       }
 
-      // Default to active subpage route
       const path = location.pathname;
       if (path === "/about") {
         updateBubblePosition(aboutRef.current);
@@ -80,14 +76,13 @@ const Navbar = () => {
 
     runUpdate();
 
-    // If the mobile menu has just opened, wait for the CSS transition to complete and re-run
     if (menuOpen) {
       const timer = setTimeout(runUpdate, 260);
       return () => clearTimeout(timer);
     }
   }, [location.pathname, hoveredEl, menuOpen]);
 
-  // Recalculate bubble positions on window resize
+  // Recalculate indicator position on window resize
   useEffect(() => {
     const handleResize = () => {
       const path = location.pathname;
@@ -117,7 +112,7 @@ const Navbar = () => {
           className={`nav-center ${menuOpen ? "active" : ""}`}
           onMouseLeave={() => setHoveredEl(null)}
         >
-          {/* Moving liquid glass bubble background */}
+          {/* Active sliding bubble background */}
           <div 
             className="navbar-active-bubble"
             style={{

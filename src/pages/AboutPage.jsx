@@ -2,7 +2,7 @@ import React, { useRef, useState } from "react";
 import "../styles/AboutPage.css";
 import profileImg from "../Assests/myImg.png";
 
-// Reusable Glassmorphic Card with 3D Tilt and Mouse Glare
+// Glassmorphic Card with 3D Tilt and Mouse Glare effect
 const GlassCard = ({ children, className = "", maxTilt = 8, scale = 1.02 }) => {
   const cardRef = useRef(null);
   const [tiltStyle, setTiltStyle] = useState({});
@@ -122,7 +122,7 @@ const AboutPage = () => {
         </div>
       </div>
 
-      {/* ===== Current Focus Section ===== */}
+      {/* Current Focus Section */}
       <div className="about-section focus-section">
         <h2 className="about-section-title focus-title">
           <span className="title-bar"></span>Current Focus
@@ -163,7 +163,7 @@ const AboutPage = () => {
         </div>
       </div>
 
-      {/* ===== Achievements Section ===== */}
+      {/* Achievements Section */}
       <div className="about-section achievements-section">
         <h2 className="about-section-title achievements-title">
           <span className="title-bar"></span>Achievements
@@ -186,7 +186,7 @@ const AboutPage = () => {
         </div>
       </div>
 
-      {/* ===== Tech Stack Section ===== */}
+      {/* Tech Stack Section */}
       <div className="about-section tech-stack-section">
         <h2 className="about-section-title tech-stack-title">
           <span className="title-bar"></span>Technical Skills

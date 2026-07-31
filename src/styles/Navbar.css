@@ -1,4 +1,4 @@
-/* Wrapper */
+
 .navbar-wrapper {
   position: fixed;
   top: 20px;
@@ -8,7 +8,7 @@
   z-index: 1000;
 }
 
-/* Navbar */
+
 .navbar {
   height: 46px;
   padding: 0 18px;
@@ -18,7 +18,7 @@
   gap: 18px;
   border-radius: 999px;
 
-  /* High-end Glass effect */
+  
   background: rgba(10, 10, 15, 0.35);
   -webkit-backdrop-filter: blur(20px) saturate(180%);
   backdrop-filter: blur(20px) saturate(180%);
@@ -42,7 +42,7 @@
     0 0 25px rgba(0, 150, 255, 0.1);
 }
 
-/* LEFT */
+
 .nav-left .db {
   text-decoration: none;
 }
@@ -78,31 +78,31 @@
     0 0 15px rgba(255, 255, 255, 0.15);
 }
 
-/* CENTER */
+
 .nav-center {
   display: flex;
   align-items: center;
   gap: 20px;
-  position: relative; /* Container context for active sliding bubble */
+  position: relative; 
 }
 
-/* Moving bubble background capsule (Apple OS style) */
+
 .navbar-active-bubble {
   position: absolute;
   top: 0;
   left: 0;
   pointer-events: none;
   border-radius: 999px;
-  z-index: 1; /* Below link text */
+  z-index: 1; 
   
-  /* Frosted Liquid Glass Style */
+  
   background: rgba(255, 255, 255, 0.08);
   border: 1px solid rgba(255, 255, 255, 0.15);
   box-shadow: 
     inset 0 1px 0.5px rgba(255, 255, 255, 0.15),
     0 4px 12px rgba(0, 0, 0, 0.2);
   
-  /* Smooth liquid flow transition curves */
+  
   transition: 
     transform 0.35s cubic-bezier(0.25, 1, 0.5, 1),
     width 0.35s cubic-bezier(0.25, 1, 0.5, 1),
@@ -110,7 +110,7 @@
     opacity 0.25s ease;
 }
 
-/* Links */
+
 .nav-center a:not(.resume-btn) {
   display: flex;
   align-items: center;
@@ -124,7 +124,7 @@
   border: 1px solid transparent;
   background-color: transparent;
   position: relative;
-  z-index: 2; /* Sit on top of active bubble */
+  z-index: 2; 
   transition: color 0.25s ease;
 }
 
@@ -133,7 +133,7 @@
   color: #ffffff;
 }
 
-/* Resume Button */
+
 .navbar .resume-btn {
   height: 28px;
   padding: 0 14px;
@@ -143,7 +143,7 @@
   border-radius: 999px;
   text-decoration: none;
   
-  /* Glassmorphism styling */
+  
   background: rgba(255, 255, 255, 0.06);
   -webkit-backdrop-filter: blur(10px);
   backdrop-filter: blur(10px);
@@ -183,7 +183,7 @@
 }
 
 @media (max-width: 768px) {
-  /* Show hamburger */
+  
   .hamburger {
     display: block;
   }
@@ -243,7 +243,7 @@
     border-radius: 16px;
   }
 
-  /* Hide original dividers */
+  
   .divider {
     display: none;
   }
@@ -256,14 +256,14 @@
   gap: 12px;
 }
 
-/* Divider */
+
 .divider {
   width: 0.1rem;
   height: 25px;
   background: rgba(255, 255, 255, 0.15);
 }
 
-/* RIGHT */
+
 .nav-right {
   display: flex;
   align-items: center;

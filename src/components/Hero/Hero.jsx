@@ -12,7 +12,7 @@ const Hero = () => {
   const fullText1 = "Hi, I'm Dibyo Banerjee";
   const fullText2 = "Full Stack Software Developer";
 
-  // First line typing animation
+  // Typing animation for main heading
   useEffect(() => {
     let index = 0;
     const interval = setInterval(() => {
@@ -26,7 +26,7 @@ const Hero = () => {
     return () => clearInterval(interval);
   }, []);
 
-  // Second line typing animation
+  // Typing animation for sub-heading
   useEffect(() => {
     if (isDone1) {
       let index = 0;
