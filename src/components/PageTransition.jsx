@@ -18,12 +18,20 @@ const PageTransition = ({ children }) => {
       document.body.scrollTo({ top: 0, behavior: "instant" });
     }
 
-    setIsTransitioning(true);
+    let transitionTimer;
+    // Defer state update to avoid calling setState synchronously in effect
+    transitionTimer = setTimeout(() => {
+      setIsTransitioning(true);
+    }, 0);
+
     const timer = setTimeout(() => {
       setIsTransitioning(false);
     }, 800);
 
-    return () => clearTimeout(timer);
+    return () => {
+      clearTimeout(transitionTimer);
+      clearTimeout(timer);
+    };
   }, [location.pathname]);
 
   return (

@@ -1,10 +1,9 @@
 import "../../styles/Navbar.css";
 import React, { useState, useEffect, useRef } from "react";
-import { Link, NavLink, useNavigate, useLocation } from "react-router-dom";
+import { Link, NavLink, useLocation } from "react-router-dom";
 
 const Navbar = () => {
   const [menuOpen, setMenuOpen] = useState(false);
-  const navigate = useNavigate();
   const location = useLocation();
 
   // Navigation references
@@ -152,7 +151,7 @@ const Navbar = () => {
           </a>
 
           <a
-            href="https://drive.google.com/file/d/1aqEVkf8Y0tCX4ISiLoL0YFmXFlNW_OoL/view?usp=sharing"
+            href="https://drive.google.com/file/d/1_8ahgTMBAa9cw8xjUIg4WFZU1LF5UyhD/view"
             target="_blank"
             rel="noopener noreferrer"
             className="resume-btn"
