@@ -1,6 +1,7 @@
 import React, { useRef, useState } from "react";
 import "../styles/AboutPage.css";
 import profileImg from "../Assests/myImg.png";
+import { Terminal, DraftingCompass, Brain } from "lucide-react";
 
 // Glassmorphic Card with 3D Tilt and Mouse Glare effect
 const GlassCard = ({ children, className = "", maxTilt = 8, scale = 1.02 }) => {
@@ -130,7 +131,7 @@ const AboutPage = () => {
         <div className="about-grid current-focus-grid">
           <GlassCard className="focus-card">
             <div className="focus-icon-container">
-              <i className="fas fa-terminal"></i>
+              <Terminal size={20} strokeWidth={2} />
             </div>
             <h3>Backend Systems</h3>
             <p>
@@ -141,7 +142,7 @@ const AboutPage = () => {
 
           <GlassCard className="focus-card">
             <div className="focus-icon-container">
-              <i className="fas fa-drafting-compass"></i>
+              <DraftingCompass size={20} strokeWidth={2} />
             </div>
             <h3>System Design</h3>
             <p>
@@ -152,7 +153,7 @@ const AboutPage = () => {
 
           <GlassCard className="focus-card">
             <div className="focus-icon-container">
-              <i className="fas fa-brain"></i>
+              <Brain size={20} strokeWidth={2} />
             </div>
             <h3>Generative AI</h3>
             <p>

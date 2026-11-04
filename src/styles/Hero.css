@@ -187,6 +187,9 @@
 
 
 .hero-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   color: #fff;
   font-size: 0.95rem;
   position: relative;
@@ -207,6 +210,14 @@
     inset 0 1px 0 rgba(255, 255, 255, 0.25),
     inset 0 -1px 0 rgba(0, 0, 0, 0.2);
   overflow: hidden;
+}
+
+.hero-icon svg {
+  display: block;
+  position: relative;
+  z-index: 1;
+  fill: currentColor;
+  transition: transform 0.2s ease;
 }
 
 .hero-icon::before {
@@ -246,4 +257,8 @@
   border: 1px solid rgba(255, 255, 255, 0.488);
   scale: 1.02;
   transform: translateY(-2px);
+}
+
+.hero-icon:hover svg {
+  transform: scale(1.12);
 }
