@@ -57,7 +57,7 @@ const Footer = () => {
             E-mail
           </a>
           <a
-            href="https://drive.google.com/file/d/1_8ahgTMBAa9cw8xjUIg4WFZU1LF5UyhD/view"
+            href="https://drive.google.com/file/d/1fk5FNAL7n4sZthilsnkAmzCiwidb2Wey/view?usp=sharing"
             target="_blank"
             rel="noopener noreferrer"
             className="btn resume-btn"
