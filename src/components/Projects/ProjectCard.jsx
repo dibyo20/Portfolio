@@ -3,7 +3,6 @@ import "../../styles/ProjectCard.css";
 
 const ProjectCard = ({ project }) => {
   const cardRef = useRef(null);
-  const [tiltStyle, setTiltStyle] = useState({});
   const [glareStyle, setGlareStyle] = useState({});
 
   const handleMouseMove = (e) => {
@@ -13,20 +12,6 @@ const ProjectCard = ({ project }) => {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    const xc = rect.width / 2;
-    const yc = rect.height / 2;
-    const dx = (x - xc) / xc;
-    const dy = (y - yc) / yc;
-
-    const maxTilt = 4;
-    const rotateX = -dy * maxTilt;
-    const rotateY = dx * maxTilt;
-
-    setTiltStyle({
-      transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`,
-    });
-
-    // Set glare reflection coordinates
     setGlareStyle({
       "--mouse-x": `${x}px`,
       "--mouse-y": `${y}px`,
@@ -34,43 +19,6 @@ const ProjectCard = ({ project }) => {
   };
 
   const handleMouseLeave = () => {
-    setTiltStyle({});
-    setGlareStyle({});
-  };
-
-  const handleTouchStart = (e) => {
-    handleTouchMove(e);
-  };
-
-  const handleTouchMove = (e) => {
-    if (!cardRef.current || e.touches.length === 0) return;
-    const card = cardRef.current;
-    const rect = card.getBoundingClientRect();
-    const touch = e.touches[0];
-    const x = touch.clientX - rect.left;
-    const y = touch.clientY - rect.top;
-
-    const xc = rect.width / 2;
-    const yc = rect.height / 2;
-    const dx = (x - xc) / xc;
-    const dy = (y - yc) / yc;
-
-    const maxTilt = 4;
-    const rotateX = -dy * maxTilt;
-    const rotateY = dx * maxTilt;
-
-    setTiltStyle({
-      transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`,
-    });
-
-    setGlareStyle({
-      "--mouse-x": `${x}px`,
-      "--mouse-y": `${y}px`,
-    });
-  };
-
-  const handleTouchEnd = () => {
-    setTiltStyle({});
     setGlareStyle({});
   };
 
@@ -79,15 +27,9 @@ const ProjectCard = ({ project }) => {
       <div
         ref={cardRef}
         className="project-card"
-        style={{
-          ...tiltStyle,
-          ...glareStyle,
-        }}
+        style={glareStyle}
         onMouseMove={handleMouseMove}
         onMouseLeave={handleMouseLeave}
-        onTouchStart={handleTouchStart}
-        onTouchMove={handleTouchMove}
-        onTouchEnd={handleTouchEnd}
       >
         <div className="card-glare"></div>
 

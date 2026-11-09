@@ -3,7 +3,6 @@ import "../../styles/Experience.css";
 
 const Experience = () => {
   const cardRef = useRef(null);
-  const [tiltStyle, setTiltStyle] = useState({});
   const [glareStyle, setGlareStyle] = useState({});
 
   const handleMouseMove = (e) => {
@@ -13,19 +12,6 @@ const Experience = () => {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    const xc = rect.width / 2;
-    const yc = rect.height / 2;
-    const dx = (x - xc) / xc;
-    const dy = (y - yc) / yc;
-
-    const maxTilt = 3;
-    const rotateX = -dy * maxTilt;
-    const rotateY = dx * maxTilt;
-
-    setTiltStyle({
-      transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.01, 1.01, 1.01)`,
-    });
-
     setGlareStyle({
       "--mouse-x": `${x}px`,
       "--mouse-y": `${y}px`,
@@ -33,7 +19,6 @@ const Experience = () => {
   };
 
   const handleMouseLeave = () => {
-    setTiltStyle({});
     setGlareStyle({});
   };
 
@@ -59,10 +44,7 @@ const Experience = () => {
         <div
           ref={cardRef}
           className="experience-card"
-          style={{
-            ...tiltStyle,
-            ...glareStyle,
-          }}
+          style={glareStyle}
           onMouseMove={handleMouseMove}
           onMouseLeave={handleMouseLeave}
         >
@@ -120,31 +102,6 @@ const Experience = () => {
               polling.
             </li>
           </ul>
-
-          <div className="experience-footer">
-            <a
-              href="https://solvitcounselling.com/"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="experience-live-btn"
-            >
-              <span>Visit Live Platform</span>
-              <svg
-                width="14"
-                height="14"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.5"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                <polyline points="15 3 21 3 21 9" />
-                <line x1="10" y1="14" x2="21" y2="3" />
-              </svg>
-            </a>
-          </div>
         </div>
       </div>
     </section>

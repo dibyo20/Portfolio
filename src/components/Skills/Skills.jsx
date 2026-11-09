@@ -2,22 +2,25 @@ import React, { useRef, useState } from "react";
 import "../../styles/Skills.css";
 
 const skills = [
-  "HTML",
-  "CSS",
-  "JavaScript",
-  "React",
+  "React 19",
+  "Redux Toolkit",
   "Node.js",
   "Express.js",
   "MongoDB",
-  "MySQL",
-  "Git",
-  "GitHub",
-  "VS Code",
-  "Postman",
+  "Redis",
   "Java",
-  "Bootstrap",
+  "JavaScript",
+  "REST APIs",
+  "Razorpay",
+  "Google OAuth",
+  "Nginx",
+  "PM2",
+  "VPS Deployment",
+  "MediaPipe",
   "TailwindCSS",
-  "SCSS"
+  "SCSS",
+  "Git",
+  "Postman",
 ];
 
 const SkillBox = ({ skill, index }) => {

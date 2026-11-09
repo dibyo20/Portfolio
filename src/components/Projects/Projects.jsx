@@ -1,27 +1,27 @@
 import React from "react";
 import "../../styles/Projects.css";
 import ProjectCard from "./ProjectCard";
-import clicksyImg from "../../Assests/clicksy.png";
-import solvitImg from "../../Assests/solvit.png";
+import nexgearImg from "../../Assests/nexgear.png";
+import predictoImg from "../../Assests/predicto.png";
 import { Link } from "react-router-dom";
 
 const Projects = () => {
   const projectData = [
     {
-      title: "Clicksy",
-      desc: "A modern social media platform built using the MERN Stack. It offers a seamless experience for creators to connect, share, and build high-octane digital communities.",
-      tech: ["React", "Node.js", "Express.js", "MongoDB", "ImageKit"],
-      image: clicksyImg,
-      github: "https://github.com/dibyo20/Clicksy.git",
-      live: "https://clicksy.dibyo.tech/",
+      title: "NexGear",
+      desc: "Enterprise mechanical hardware e-commerce platform featuring an 8-stage MongoDB aggregation pipeline, variant-aware SKU cart with atomic updates, and Razorpay HMAC-SHA256 payments.",
+      tech: ["React 19", "Redux Toolkit", "Node.js", "Express 5", "MongoDB", "Redis", "Razorpay"],
+      image: nexgearImg,
+      github: "https://github.com/dibyo20/Nexgear",
+      live: "https://nexgear.dibyo.tech/",
     },
     {
-      title: "Solvit Counselling",
-      desc: "A full-stack counselling platform for discovering professional counsellors, featuring secure cookie-based JWT authentication and specialization-based filtering.",
-      tech: ["React", "Node.js", "Express", "MongoDB", "SCSS"],
-      image: solvitImg,
-      github: "https://github.com/dibyo20/Solvit-Counselling.git",
-      live: "https://solvit.dibyo.tech/",
+      title: "Predicto",
+      desc: "AI-powered mood-based music platform that classifies real-time facial expressions on-device via Google MediaPipe and streams a curated emotional soundscape via ImageKit CDN.",
+      tech: ["React", "Node.js", "Express", "MongoDB", "Redis", "MediaPipe", "ImageKit"],
+      image: predictoImg,
+      github: "https://github.com/dibyo20/Predicto",
+      live: "https://predicto.dibyo.tech/",
     },
   ];
   return (
