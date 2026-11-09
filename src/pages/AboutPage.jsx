@@ -3,10 +3,9 @@ import "../styles/AboutPage.css";
 import profileImg from "../Assests/myImg.png";
 import { Terminal, DraftingCompass, Brain } from "lucide-react";
 
-// Glassmorphic Card with 3D Tilt and Mouse Glare effect
-const GlassCard = ({ children, className = "", maxTilt = 8, scale = 1.02 }) => {
+// Glassmorphic Card with Smooth Glare and Hover Scale
+const GlassCard = ({ children, className = "" }) => {
   const cardRef = useRef(null);
-  const [tiltStyle, setTiltStyle] = useState({});
   const [glareStyle, setGlareStyle] = useState({});
 
   const handleMouseMove = (e) => {
@@ -16,18 +15,6 @@ const GlassCard = ({ children, className = "", maxTilt = 8, scale = 1.02 }) => {
     const x = e.clientX - rect.left;
     const y = e.clientY - rect.top;
 
-    const xc = rect.width / 2;
-    const yc = rect.height / 2;
-    const dx = (x - xc) / xc;
-    const dy = (y - yc) / yc;
-
-    const rotateX = -dy * maxTilt;
-    const rotateY = dx * maxTilt;
-
-    setTiltStyle({
-      transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(${scale}, ${scale}, ${scale})`,
-    });
-
     setGlareStyle({
       "--mouse-x": `${x}px`,
       "--mouse-y": `${y}px`,
@@ -35,42 +22,6 @@ const GlassCard = ({ children, className = "", maxTilt = 8, scale = 1.02 }) => {
   };
 
   const handleMouseLeave = () => {
-    setTiltStyle({});
-    setGlareStyle({});
-  };
-
-  const handleTouchStart = (e) => {
-    handleTouchMove(e);
-  };
-
-  const handleTouchMove = (e) => {
-    if (!cardRef.current || e.touches.length === 0) return;
-    const card = cardRef.current;
-    const rect = card.getBoundingClientRect();
-    const touch = e.touches[0];
-    const x = touch.clientX - rect.left;
-    const y = touch.clientY - rect.top;
-
-    const xc = rect.width / 2;
-    const yc = rect.height / 2;
-    const dx = (x - xc) / xc;
-    const dy = (y - yc) / yc;
-
-    const rotateX = -dy * maxTilt;
-    const rotateY = dx * maxTilt;
-
-    setTiltStyle({
-      transform: `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(${scale}, ${scale}, ${scale})`,
-    });
-
-    setGlareStyle({
-      "--mouse-x": `${x}px`,
-      "--mouse-y": `${y}px`,
-    });
-  };
-
-  const handleTouchEnd = () => {
-    setTiltStyle({});
     setGlareStyle({});
   };
 
@@ -78,15 +29,9 @@ const GlassCard = ({ children, className = "", maxTilt = 8, scale = 1.02 }) => {
     <div
       ref={cardRef}
       className={`about-card ${className}`}
-      style={{
-        ...tiltStyle,
-        ...glareStyle,
-      }}
+      style={glareStyle}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      onTouchStart={handleTouchStart}
-      onTouchMove={handleTouchMove}
-      onTouchEnd={handleTouchEnd}
     >
       <div className="card-glare"></div>
       <div className="card-inner-content">
@@ -110,15 +55,15 @@ const AboutPage = () => {
 
         <div className="about-text">
           <p>
-            I’m a <strong className="highlight">Full-Stack MERN Developer</strong> passionate about building scalable, secure, and user-centric web applications that solve real-world problems. I enjoy developing end-to-end solutions—from crafting responsive user interfaces to engineering robust backend systems, designing efficient MongoDB schemas, and building <strong className="highlight">30+ RESTful API endpoints</strong> across my projects with features such as authentication, authorization, media integration, and CRUD operations. Alongside development, I continuously strengthen my problem-solving skills through <strong className="highlight">Data Structures & Algorithms</strong>, having solved <strong className="highlight">300+ LeetCode problems</strong> in Java with a <strong className="highlight">140+ day coding streak</strong>, covering core interview topics including Arrays, Strings, Trees, Graphs, Dynamic Programming, and Binary Search.
+            I’m a <strong className="highlight">Full-Stack MERN Developer</strong> and <strong className="highlight">Web Development Intern</strong> at <strong className="highlight">Solvit</strong>, passionate about architecting scalable, secure, and production-ready web platforms. From engineering resilient Express/MongoDB backend APIs handling <strong className="highlight">200–250 concurrent users</strong> to crafting responsive, component-driven UIs in React 19, I focus on building end-to-end solutions with production-grade reliability, secure authentication, Razorpay payments, and distributed Redis caching.
           </p>
 
           <p>
-            Currently pursuing a <strong className="highlight">B.Tech</strong> in <strong className="highlight">Computer Science and Engineering</strong>, I continuously expand my technical expertise by building production-ready projects and exploring modern software engineering practices. I believe in learning by building, constantly challenging myself through real-world applications and hands-on development.
+            Alongside development, I continuously push my problem-solving capabilities through <strong className="highlight">Data Structures & Algorithms</strong> in Java, having solved <strong className="highlight">500+ LeetCode problems</strong> with a <strong className="highlight">245+ day coding streak</strong>. My practice spans core algorithmic principles including Graphs, Dynamic Programming, Trees, Binary Search, Sliding Window, and Two Pointers.
           </p>
 
           <p>
-            My goal is to combine strong full-stack development with <strong className="highlight">System Design</strong> and <strong className="highlight">Generative AI</strong> to grow into an <strong className="highlight">AI Engineer</strong>. I aspire to build intelligent, scalable software that leverages modern AI technologies to solve meaningful real-world problems and create impactful digital experiences.
+            Currently pursuing my <strong className="highlight">B.Tech in Computer Science and Engineering</strong> at Netaji Subhash Engineering College (CGPA: 7.98), my goal is to combine robust full-stack engineering with <strong className="highlight">System Design</strong> and <strong className="highlight">Generative AI</strong> to grow into a versatile <strong className="highlight">Software Development Engineer (SDE)</strong> and <strong className="highlight">AI Engineer</strong>.
           </p>
         </div>
       </div>
@@ -171,17 +116,17 @@ const AboutPage = () => {
         </h2>
         <div className="about-grid achievements-grid">
           <GlassCard className="achievement-card">
-            <div className="achievement-number">300+</div>
-            <div className="achievement-label">DSA PROBLEMS</div>
+            <div className="achievement-number">500+</div>
+            <div className="achievement-label">DSA PROBLEMS SOLVED</div>
           </GlassCard>
 
           <GlassCard className="achievement-card">
-            <div className="achievement-number">140+</div>
-            <div className="achievement-label">LEETCODE STREAK</div>
+            <div className="achievement-number">245+</div>
+            <div className="achievement-label">LEETCODE STREAK (DAYS)</div>
           </GlassCard>
 
           <GlassCard className="achievement-card">
-            <div className="achievement-number">10+</div>
+            <div className="achievement-number">15+</div>
             <div className="achievement-label">PROJECTS BUILT</div>
           </GlassCard>
         </div>
@@ -196,59 +141,67 @@ const AboutPage = () => {
           <GlassCard className="tech-card">
             <div className="tech-category-title">FRONTEND</div>
             <div className="tech-badges-grid">
-              <span className="tech-badge">HTML</span>
-              <span className="tech-badge">CSS</span>
-              <span className="tech-badge">React</span>
-              <span className="tech-badge">Tailwind</span>
-              <span className="tech-badge">Bootstrap</span>
-              <span className="tech-badge">Framer Motion</span>
+              <span className="tech-badge">React 19</span>
+              <span className="tech-badge">Redux Toolkit</span>
+              <span className="tech-badge">JavaScript (ES6+)</span>
+              <span className="tech-badge">HTML5</span>
+              <span className="tech-badge">CSS3</span>
+              <span className="tech-badge">TailwindCSS</span>
               <span className="tech-badge">SCSS</span>
+              <span className="tech-badge">Framer Motion</span>
               <span className="tech-badge">Vite</span>
-              <span className="tech-badge">Responsive Designs</span>
-              <span className="tech-badge">React Component Architecture</span>
+              <span className="tech-badge">Responsive Design</span>
+              <span className="tech-badge">Component Architecture</span>
             </div>
           </GlassCard>
 
           <GlassCard className="tech-card">
-            <div className="tech-category-title">BACKEND</div>
+            <div className="tech-category-title">BACKEND & APIS</div>
             <div className="tech-badges-grid">
               <span className="tech-badge">Node.js</span>
-              <span className="tech-badge">Express.js</span>
-              <span className="tech-badge">MongoDB</span>
+              <span className="tech-badge">Express.js 5</span>
+              <span className="tech-badge">REST APIs</span>
+              <span className="tech-badge">JWT & Refresh Tokens</span>
+              <span className="tech-badge">Google OAuth 2.0</span>
+              <span className="tech-badge">Passport.js</span>
+              <span className="tech-badge">Razorpay Payments</span>
+              <span className="tech-badge">RBAC Access Control</span>
+              <span className="tech-badge">DAO & MVC Patterns</span>
+              <span className="tech-badge">express-validator</span>
+              <span className="tech-badge">Idempotency Keys</span>
+            </div>
+          </GlassCard>
+
+          <GlassCard className="tech-card">
+            <div className="tech-category-title">DATABASE & CACHING</div>
+            <div className="tech-badges-grid">
+              <span className="tech-badge">MongoDB Atlas</span>
               <span className="tech-badge">Mongoose</span>
-              <span className="tech-badge">MySQL</span>
-              <span className="tech-badge">REST APIs Development</span>
-              <span className="tech-badge">JWT Authentication</span>
-              <span className="tech-badge">MVC Architecture</span>
-              <span className="tech-badge">CRUD Operations</span>
+              <span className="tech-badge">Aggregation Pipelines</span>
+              <span className="tech-badge">Compound Indexing</span>
               <span className="tech-badge">Schema Design</span>
-              <span className="tech-badge">Redis</span>
+              <span className="tech-badge">Redis Caching</span>
+              <span className="tech-badge">Token Blacklisting</span>
+              <span className="tech-badge">MySQL</span>
               <span className="tech-badge">Database Optimization</span>
             </div>
           </GlassCard>
 
           <GlassCard className="tech-card">
-            <div className="tech-category-title">TOOLS</div>
+            <div className="tech-category-title">DEVOPS & TOOLS</div>
             <div className="tech-badges-grid">
+              <span className="tech-badge">Hostinger VPS</span>
+              <span className="tech-badge">Nginx</span>
+              <span className="tech-badge">PM2 Clustering</span>
+              <span className="tech-badge">Linux CLI</span>
               <span className="tech-badge">Git</span>
               <span className="tech-badge">GitHub</span>
               <span className="tech-badge">Postman</span>
               <span className="tech-badge">Axios</span>
+              <span className="tech-badge">ImageKit CDN</span>
               <span className="tech-badge">VS Code</span>
-              <span className="tech-badge">Linux CLI</span>
-            </div>
-          </GlassCard>
-
-          <GlassCard className="tech-card">
-            <div className="tech-category-title">LEARNING</div>
-            <div className="tech-badges-grid">
-              <span className="tech-badge">TypeScript</span>
-              <span className="tech-badge">Next.js</span>
-              <span className="tech-badge">System Design</span>
-              <span className="tech-badge">VPS Deployment</span>
-              <span className="tech-badge">LangChain</span>
-              <span className="tech-badge">LangGraph</span>
-              <span className="tech-badge">LLM Integration</span>
+              <span className="tech-badge">Vercel</span>
+              <span className="tech-badge">Render</span>
             </div>
           </GlassCard>
         </div>
