@@ -5,6 +5,9 @@ import "../../styles/Footer.css";
 const Footer = () => {
   const contactRef = useRef(null);
   const [glareStyle, setGlareStyle] = useState({});
+  const [formData, setFormData] = useState({ name: "", email: "", message: "" });
+  const [isSending, setIsSending] = useState(false);
+  const [isSubmitted, setIsSubmitted] = useState(false);
 
   const handleLogoClick = (e) => {
     if (window.location.pathname === "/") {
@@ -28,8 +31,34 @@ const Footer = () => {
     setGlareStyle({});
   };
 
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({ ...prev, [name]: value }));
+  };
+
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    if (!formData.name || !formData.email || !formData.message) return;
+
+    setIsSending(true);
+
+    const subject = encodeURIComponent(`Portfolio Inquiry from ${formData.name}`);
+    const body = encodeURIComponent(
+      `Name: ${formData.name}\nEmail: ${formData.email}\n\nMessage:\n${formData.message}`
+    );
+
+    // Open user's default email client prefilled
+    window.location.href = `mailto:dibyobanerjee20@gmail.com?subject=${subject}&body=${body}`;
+
+    setTimeout(() => {
+      setIsSending(false);
+      setIsSubmitted(true);
+      setFormData({ name: "", email: "", message: "" });
+    }, 700);
+  };
+
   return (
-    <footer className="footer">
+    <footer className="footer" id="connect">
       <div
         ref={contactRef}
         className="contact-box"
@@ -39,39 +68,91 @@ const Footer = () => {
       >
         <div className="contact-glare"></div>
 
-        <h2 className="footer-title">Let's Work Together</h2>
+        <h2 className="footer-title">Let's Connect</h2>
 
         <p className="footer-subtext">
-          Feel free to reach out for collaboration or just a friendly hello!
+          Have a project in mind, an opportunity, or just want to say hi? Drop a message below!
         </p>
 
-        <div className="footer-buttons">
-          <a
-            href="mailto:dibyobanerjee20@gmail.com?subject=Portfolio%20Inquiry&body=Hi%20Dibyo%2C%0D%0A%0D%0AI%20found%20your%20portfolio%20and%20would%20like%20to%20connect%20with%20you."
-            className="btn contact-btn"
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: "8px" }}>
-              <rect x="2" y="4" width="20" height="16" rx="2" />
-              <path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7" />
-            </svg>
-            E-mail
-          </a>
-          <a
-            href="https://drive.google.com/file/d/1fk5FNAL7n4sZthilsnkAmzCiwidb2Wey/view?usp=sharing"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn resume-btn"
-          >
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" style={{ marginRight: "8px" }}>
-              <path d="M15 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7Z" />
-              <path d="M14 2v4a2 2 0 0 0 2 2h4" />
-              <path d="M10 9H8" />
-              <path d="M16 13H8" />
-              <path d="M16 17H8" />
-            </svg>
-            Resume
-          </a>
-        </div>
+        <form className="connect-form" onSubmit={handleSubmit}>
+          <div className="connect-form-row">
+            <div className="connect-input-group">
+              <label htmlFor="connect-name" className="connect-label">Your Name</label>
+              <input
+                type="text"
+                id="connect-name"
+                name="name"
+                value={formData.name}
+                onChange={handleChange}
+                placeholder="e.g. Alex Smith"
+                required
+                className="connect-input"
+              />
+            </div>
+            <div className="connect-input-group">
+              <label htmlFor="connect-email" className="connect-label">Your Email</label>
+              <input
+                type="email"
+                id="connect-email"
+                name="email"
+                value={formData.email}
+                onChange={handleChange}
+                placeholder="e.g. alex@example.com"
+                required
+                className="connect-input"
+              />
+            </div>
+          </div>
+
+          <div className="connect-input-group message-group">
+            <label htmlFor="connect-message" className="connect-label">Your Message</label>
+            <textarea
+              id="connect-message"
+              name="message"
+              value={formData.message}
+              onChange={handleChange}
+              placeholder="Tell me about your project, ideas, or questions..."
+              rows={4}
+              required
+              className="connect-textarea"
+            ></textarea>
+          </div>
+
+          <div className="connect-form-actions">
+            <button type="submit" className="connect-submit-btn" disabled={isSending}>
+              {isSending ? (
+                <span>Sending...</span>
+              ) : (
+                <>
+                  <span>Send Message</span>
+                  <svg
+                    className="connect-submit-icon"
+                    width="15"
+                    height="15"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2.2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <line x1="22" y1="2" x2="11" y2="13"></line>
+                    <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
+                  </svg>
+                </>
+              )}
+            </button>
+          </div>
+
+          {isSubmitted && (
+            <div className="connect-success-msg">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#00D9FF" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                <polyline points="20 6 9 17 4 12" />
+              </svg>
+              <span>Message draft opened in your email client! Thank you for reaching out.</span>
+            </div>
+          )}
+        </form>
       </div>
 
       <div className="footer-line"></div>

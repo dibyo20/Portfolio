@@ -63,7 +63,7 @@ const AboutPage = () => {
           </p>
 
           <p>
-            Currently pursuing my <strong className="highlight">B.Tech in Computer Science and Engineering</strong> at Netaji Subhash Engineering College (CGPA: 7.98), my goal is to combine robust full-stack engineering with <strong className="highlight">System Design</strong> and <strong className="highlight">Generative AI</strong> to grow into a versatile <strong className="highlight">Software Development Engineer (SDE)</strong> and <strong className="highlight">AI Engineer</strong>.
+            Currently pursuing my <strong className="highlight">B.Tech in Computer Science and Engineering</strong> at Netaji Subhash Engineering College, my goal is to combine robust full-stack engineering with <strong className="highlight">System Design</strong> and <strong className="highlight">Generative AI</strong> to grow into a versatile <strong className="highlight">Software Development Engineer (SDE)</strong> and <strong className="highlight">AI Engineer</strong>.
           </p>
         </div>
       </div>

@@ -27,9 +27,9 @@ const Navbar = () => {
     e.preventDefault();
     setMenuOpen(false);
     
-    const footer = document.querySelector(".footer");
-    if (footer) {
-      footer.scrollIntoView({ behavior: "smooth" });
+    const connectSection = document.getElementById("connect") || document.querySelector(".footer");
+    if (connectSection) {
+      connectSection.scrollIntoView({ behavior: "smooth" });
     }
   };
 
@@ -142,12 +142,12 @@ const Navbar = () => {
           </NavLink>
           <a 
             ref={contactRef}
-            href="#contact" 
+            href="#connect" 
             className="ver-nav" 
             onClick={handleContactClick}
             onMouseEnter={(e) => setHoveredEl(e.currentTarget)}
           >
-            Contact
+            Connect
           </a>
 
           <a

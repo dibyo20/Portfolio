@@ -83,6 +83,14 @@
   object-position: top center;
 }
 
+.major-project-image-wrapper img.predicto-project-img {
+  object-position: center center;
+}
+
+.major-project-image-wrapper:hover img.predicto-project-img {
+  transform-origin: center center;
+}
+
 .major-project-image-wrapper:hover {
   border-color: rgba(255, 255, 255, 0.2);
   transform: translateY(-4px);
@@ -202,37 +210,84 @@
   text-decoration: none;
   transition: all 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
   cursor: pointer;
-}
-
-.btn-pill.primary {
-  background: #ffffff;
-  color: #030303;
-  border: 1px solid #ffffff;
-}
-
-.btn-pill.primary:hover {
-  background: rgba(255, 255, 255, 0.9);
-  box-shadow: 
-    0 8px 20px rgba(255, 255, 255, 0.25),
-    0 0 10px rgba(255, 255, 255, 0.1);
-  transform: translateY(-2px);
-}
-
-.btn-pill.secondary {
-  background: rgba(255, 255, 255, 0.05);
-  color: #ffffff;
-  border: 1px solid rgba(255, 255, 255, 0.12);
-}
-
-.btn-pill.secondary:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.3);
-  transform: translateY(-2px);
+  -webkit-backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  position: relative;
+  overflow: hidden;
 }
 
 .btn-pill svg {
-  width: 16px;
-  height: 16px;
+  width: 15px;
+  height: 15px;
+  transition: transform 0.25s cubic-bezier(0.25, 0.8, 0.25, 1);
+}
+
+/* 1. Live Demo - Glassy with Electric Cyan Glow */
+.btn-pill.primary {
+  background: rgba(255, 255, 255, 0.05);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.14);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.15),
+    0 6px 20px rgba(0, 0, 0, 0.25);
+}
+
+.btn-pill.primary:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(0, 217, 255, 0.22),
+    rgba(255, 255, 255, 0.06)
+  );
+  border-color: rgba(0, 217, 255, 0.6);
+  color: #ffffff;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 10px 30px rgba(0, 217, 255, 0.22),
+    0 0 15px rgba(0, 217, 255, 0.1);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.btn-pill.primary:hover svg {
+  transform: translate(3px, -3px);
+}
+
+.btn-pill.primary:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 4px 15px rgba(0, 217, 255, 0.3);
+}
+
+/* 2. GitHub - Glassy with Cyber Violet / Indigo Glow */
+.btn-pill.secondary {
+  background: rgba(255, 255, 255, 0.035);
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  box-shadow:
+    inset 0 1px 0 rgba(255, 255, 255, 0.08),
+    0 4px 15px rgba(0, 0, 0, 0.2);
+}
+
+.btn-pill.secondary:hover {
+  background: linear-gradient(
+    135deg,
+    rgba(168, 85, 247, 0.2),
+    rgba(255, 255, 255, 0.06)
+  );
+  border-color: rgba(168, 85, 247, 0.55);
+  color: #ffffff;
+  box-shadow: 
+    inset 0 1px 0 rgba(255, 255, 255, 0.25),
+    0 10px 30px rgba(168, 85, 247, 0.22),
+    0 0 15px rgba(168, 85, 247, 0.1);
+  transform: translateY(-2px) scale(1.02);
+}
+
+.btn-pill.secondary:hover svg {
+  transform: translateX(3px) scale(1.12);
+}
+
+.btn-pill.secondary:active {
+  transform: translateY(0) scale(0.98);
+  box-shadow: 0 4px 15px rgba(168, 85, 247, 0.3);
 }
 
 

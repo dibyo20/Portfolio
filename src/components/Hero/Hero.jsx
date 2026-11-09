@@ -65,11 +65,25 @@ const Hero = () => {
       </p>
 
       <div className={`hero-actions-container ${isDone2 ? "reveal" : ""}`}>
-        <Link to="/projects" className="hero-btn">
-          Explore Work
+        <Link to="/projects" className="hero-btn hero-btn-explore">
+          <span>Explore Work</span>
+          <svg
+            className="hero-btn-arrow"
+            width="14"
+            height="14"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2.4"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
         </Link>
-        <a href="#contact" onClick={handleContactClick} className="hero-btn">
-          Contact Me
+        <a href="#connect" onClick={handleContactClick} className="hero-btn">
+          Connect
         </a>
         <div className="hero-icons">
           <a

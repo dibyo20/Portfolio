@@ -94,7 +94,7 @@ const ProjectsPage = () => {
             </div>
             <div className="major-project-buttons">
               <a href="https://nexgear.dibyo.tech/" target="_blank" rel="noopener noreferrer" className="btn-pill primary">
-                Live Demo
+                <span>Live Demo</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                   <polyline points="15 3 21 3 21 9" />
@@ -102,7 +102,11 @@ const ProjectsPage = () => {
                 </svg>
               </a>
               <a href="https://github.com/dibyo20/Nexgear" target="_blank" rel="noopener noreferrer" className="btn-pill secondary">
-                GitHub &lt; &gt;
+                <span>GitHub</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
               </a>
             </div>
           </div>
@@ -116,7 +120,7 @@ const ProjectsPage = () => {
             className="major-project-image-wrapper"
             onClick={() => window.open("https://predicto.dibyo.tech/", "_blank")}
           >
-            <img src={predictoImg} alt="Predicto" />
+            <img src={predictoImg} alt="Predicto" className="predicto-project-img" />
           </div>
           <div className="major-project-content">
             <h3 className="major-project-title">Predicto</h3>
@@ -167,7 +171,7 @@ const ProjectsPage = () => {
             </div>
             <div className="major-project-buttons">
               <a href="https://predicto.dibyo.tech/" target="_blank" rel="noopener noreferrer" className="btn-pill primary">
-                Live Demo
+                <span>Live Demo</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                   <polyline points="15 3 21 3 21 9" />
@@ -175,7 +179,11 @@ const ProjectsPage = () => {
                 </svg>
               </a>
               <a href="https://github.com/dibyo20/Predicto" target="_blank" rel="noopener noreferrer" className="btn-pill secondary">
-                GitHub &lt; &gt;
+                <span>GitHub</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
               </a>
             </div>
           </div>
@@ -238,7 +246,7 @@ const ProjectsPage = () => {
             </div>
             <div className="major-project-buttons">
               <a href="https://clicksy.dibyo.tech/" target="_blank" rel="noopener noreferrer" className="btn-pill primary">
-                Live Demo
+                <span>Live Demo</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                   <polyline points="15 3 21 3 21 9" />
@@ -246,7 +254,11 @@ const ProjectsPage = () => {
                 </svg>
               </a>
               <a href="https://github.com/dibyo20/Clicksy" target="_blank" rel="noopener noreferrer" className="btn-pill secondary">
-                GitHub &lt; &gt;
+                <span>GitHub</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
               </a>
             </div>
           </div>
@@ -308,7 +320,7 @@ const ProjectsPage = () => {
             </div>
             <div className="major-project-buttons">
               <a href="https://solvit.dibyo.tech/" target="_blank" rel="noopener noreferrer" className="btn-pill primary">
-                Live Demo
+                <span>Live Demo</span>
                 <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                   <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
                   <polyline points="15 3 21 3 21 9" />
@@ -316,7 +328,11 @@ const ProjectsPage = () => {
                 </svg>
               </a>
               <a href="https://github.com/dibyo20/Solvit-Counselling" target="_blank" rel="noopener noreferrer" className="btn-pill secondary">
-                GitHub &lt; &gt;
+                <span>GitHub</span>
+                <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
+                  <polyline points="16 18 22 12 16 6" />
+                  <polyline points="8 6 2 12 8 18" />
+                </svg>
               </a>
             </div>
           </div>
